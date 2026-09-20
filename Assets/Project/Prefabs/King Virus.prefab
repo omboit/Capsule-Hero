@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8d4d1ee7274cf4e8bb5720f245df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 300
+  maxHealth: 320
   attackDamage: 40
   scoreValue: 100
   explosionEffect: {fileID: 1709966663236879827, guid: 8675c89331b2d7d4bad7b880494b78d4, type: 3}

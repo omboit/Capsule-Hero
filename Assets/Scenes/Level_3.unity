@@ -5161,6 +5161,12 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 1108237351}
   moveSpeed: 7
+  jumpForce: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheck: {fileID: 0}
+  anim: {fileID: 0}
   bulletPrefab: {fileID: 4772293461431308782, guid: bc49f6bf9aa15574eac45ef744eedf9c, type: 3}
   firePoint: {fileID: 556101195}
   fpsCamera: {fileID: 266189142}
