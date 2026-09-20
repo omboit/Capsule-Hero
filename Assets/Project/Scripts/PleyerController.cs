@@ -12,6 +12,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Settings")]
     public float moveSpeed = 7f;
+    public float jumpForce = 5f; // Kekuatan melompat
+    public LayerMask groundLayer;
+    public Transform groundCheck;
+    private bool isGrounded;
+
+    [Header("Animation Settings")]
+    public Animator anim; // Masukkan komponen Animator Hero di sini
 
     [Header("Shooting Settings")]
     public GameObject bulletPrefab;
@@ -52,6 +59,24 @@ public class PlayerController : MonoBehaviour
     {
         moveX = Input.GetAxisRaw("Horizontal");
         moveZ = Input.GetAxisRaw("Vertical");
+
+        // --- SISTEM ANIMASI BERJALAN ---
+        // Kira kelajuan pergerakan dan hantar ke Animator
+        float speedValue = new Vector2(moveX, moveZ).magnitude;
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", speedValue);
+        }
+
+        // --- SISTEM MELOMPAT ---
+        // Semak jika Hero memijak lantai (kalau tak letak groundCheck, kita anggap Y dekat dengan 0)
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            if (anim != null) anim.SetTrigger("Jump");
+        }
 
         // TOGGLE FPS
         if (Input.GetMouseButtonDown(1)) 
@@ -165,7 +190,6 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         if (healthBar != null) healthBar.value = currentHealth;
         
-        // --- SUIS PANGGIL GEGARAN KAMERA ---
         if (isFPSMode && fpsCamera != null)
         {
             CameraShake shake = fpsCamera.GetComponent<CameraShake>();
@@ -177,7 +201,6 @@ public class PlayerController : MonoBehaviour
             if (shake != null) StartCoroutine(shake.Shake(0.2f, 0.4f));
         }
 
-        // --- BUNYI KENA SERANG (AKTIF) ---
         AudioSource audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
         {
@@ -202,9 +225,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator ImmunityRoutine(float duration)
     {
         isImmune = true;
-        Debug.Log("KEBAL AKTIF!");
         yield return new WaitForSeconds(duration);
         isImmune = false;
-        Debug.Log("KEBAL TAMAT!");
     }
 }
