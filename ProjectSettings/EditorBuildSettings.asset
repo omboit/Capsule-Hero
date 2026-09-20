@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: 81030d5b40dd8b94c85ce27541cf5fc7
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: e8d415ecf9619864ba7b1aa649fa8500
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: 549ddb07b35a5a248a2543d77312ac26
+  m_configObjects: {}
