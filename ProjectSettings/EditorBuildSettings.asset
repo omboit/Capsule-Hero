@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_3.unity
     guid: 549ddb07b35a5a248a2543d77312ac26
+  - enabled: 1
+    path: Assets/Scenes/Menang_Scene.unity
+    guid: ea660d10de4998f4586948d8c1e160d0
   m_configObjects: {}

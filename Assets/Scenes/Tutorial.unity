@@ -5469,8 +5469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -62}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 1.7174988, y: -2.8081}
+  m_SizeDelta: {x: 564.1718, y: 165.7406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1355136876
 GameObject:
@@ -7695,9 +7695,9 @@ SceneRoots:
   - {fileID: 1131612599}
   - {fileID: 275819229}
   - {fileID: 1352847800}
-  - {fileID: 857066681}
   - {fileID: 760853622}
   - {fileID: 948793548}
+  - {fileID: 857066681}
   - {fileID: 947091132}
   - {fileID: 1533585239}
   - {fileID: 857004733}

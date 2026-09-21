@@ -1,11 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; // Wajib guna ini untuk Text biasa
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance; // Teknik Singleton
+    public static ScoreManager instance;
     
-    public Text scoreText;
+    // Ini yang dah ditukar, dari TMP_Text kepada Text
+    public Text scoreText; 
+    
     private int score = 0;
 
     void Awake()
@@ -15,6 +17,8 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        // Ambil balik markah dari memori
+        score = PlayerPrefs.GetInt("MarkahPemain", 0);
         UpdateScoreText();
     }
 
@@ -22,6 +26,9 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
         UpdateScoreText();
+        
+        // HAFAL MARKAH TERKINI
+        PlayerPrefs.SetInt("MarkahPemain", score); 
     }
 
     void UpdateScoreText()
